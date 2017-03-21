@@ -1,0 +1,24 @@
+<ion-view ng-controller="PassbackCtrl">
+	<ion-header-bar class="bar-light">
+		<a class="button button-icon ion-ios-arrow-back" ng-click="backLogin()"></a>
+		<h1 class="title">重置密码</h1>
+	</ion-header-bar>
+	<ion-content style="background: #efeff4;">
+		<div style="height: 0.3rem;"></div>
+		<p class="padding-top padding-left"> 通过您的手机号码找回密码</p>
+		<div class="list" style="background: #efeff4;">
+			<label class="item item-input">
+		    
+		   	 <input type="text" placeholder="请输入手机号码">
+		  	</label>
+		  <label class="item item-input item-button-right" style="margin-top: 0.5rem;">
+		    <input type="password" placeholder="请输入验证码">
+		    <button class="button button-clear button-calm" style="text-decoration: underline;font-size:0.4rem;">获取验证码</button>
+		  </label>
+		</div>
+		<div class="padding">
+			<button class="button button-block " style="text-decoration: underline;margin-top:1.5rem;background: #C0C0C0;color: #FFFFFF;">重置密码</button>
+		</div>
+		
+	</ion-content>
+</ion-view>

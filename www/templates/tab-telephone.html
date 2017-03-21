@@ -1,0 +1,28 @@
+<ion-view ng-controller="TelephoneCtrl">
+	<ion-header-bar style="background:#f5f5f5;">
+		<button class="button button-clear button-dark icon ion-ios-arrow-back" ng-click="toInformation()"></button>
+		<h1 class="title">手机绑定</h1>
+	</ion-header-bar>
+	<ion-content style="background:#f5f5f5;">
+		<ion-list >
+			<div class="item" style="margin-top: 1rem;">
+				<input type="tel" placeholder="请输入原手机号" />
+			</div>
+		</ion-list>
+		 
+		<ion-list>
+			<div class="item" style="margin-top: 0.5rem;">
+				<input type="tel" placeholder="请输入新手机号" />
+			</div>
+			
+			<div class="item  item-button-right" >
+			    <input type="text" placeholder="请输入验证码">
+			    <button class="button button-clear button-positive" style="text-decoration: underline;font-size:0.4rem;">获取验证码</button>
+		 	 </div>
+		</ion-list>
+		<div class="padding " style="margin-top: 0.5rem;">
+			<button class="button button-block " style="background: #CCCCCC;">绑定</button>
+		</div>
+		
+	</ion-content>
+</ion-view>

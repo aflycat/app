@@ -1,0 +1,224 @@
+<ion-view ng-click="HomeCtrol" hide-nav-bar="true">
+	<style>
+		ion-slide img{
+			width: 100%;
+			height: 3.8rem;
+		}
+		ion-list img{
+			width: 100%;
+			height: 3.8rem;
+		}
+	</style>
+	<ion-header-bar >
+		<button class="button  icon ion-navicon-round" ng-click="toogleLeft()"></button>
+		<div class="title item-avatar" style="margin-top: -0.4rem;margin-left:2.7rem;" ng-click="showAnimate()">
+			<img  src="img/logo.png"  id="target" />
+		</div>
+		<button class="button  icon ion-search" ng-click="showSearch()"></button>
+	</ion-header-bar>
+	<ion-content>
+		<ion-slide-box show-pager="true" slide-interval="10000" does-continue="true" 
+				 auto-play="true" >
+			<ion-slide ng-repeat="x in lunboimg" ng-click="toDetail(x.id)">
+				<img src="{{x.src}}" />
+			</ion-slide>
+			
+		</ion-slide-box>
+		<ion-list>
+			<div class="item item-body" style="border: none 0;margin-top: -0.5rem;" ng-click="toDetail(x.id)" ng-repeat="x in homeDatas">
+				<p style="float: left;" class="padding-right">
+					<a class="icon ion-fireball" style="color: red;display: block;"></a>
+					<span>{{x.good}}</span>
+				</p>
+			   	<h2>{{x.title}}</h2>
+			    <img class="full-image" src="{{x.img}}">
+  			</div>
+  			
+		</ion-list>
+	</ion-content>
+	<script id="animate.html" type="text/ng-template">
+		<style>
+			/*@keyframes mymove{
+				from{transform: rotate(0deg);}
+				to{transform: rotate(360deg);}
+			}
+			#dd{
+				animation: mymove 10s ease;
+				
+			}*/
+			@keyframes ha{
+				from{top: -1rem;}
+				to{top: 3rem;}
+			}
+			.ha{
+				position: absolute;
+				left: 4.5rem;
+				
+				animation: ha 1s 1 normal ;
+				animation-fill-mode: forwards;
+			}
+			
+			@keyframes zan{
+				from{top: -1rem;left: 4.5rem;}
+				to{top:0.5rem;left: 0.4rem;}
+			}
+			.zan{
+				position: absolute;
+				animation: zan 1s 1 normal ;
+				animation-fill-mode: forwards;
+			}
+			@keyframes meng{
+				from{top: -1rem;left: 4.5rem;}
+				to{top:2.2rem;left: 2rem;}
+			}
+			.meng{
+				position: absolute;
+				animation: meng 1s 1 normal ;
+				animation-fill-mode: forwards;
+			}
+			@keyframes cao{
+				from{top: -1rem;right: 4.5rem;}
+				to{top:2.4rem;right: 2.3rem;}
+			}
+			.cao{
+				position: absolute;
+				animation: cao 1s 1 normal ;
+				animation-fill-mode: forwards;
+			}
+			@keyframes buy{
+				from{top: -1rem;right: 4.5rem;}
+				to{top:0.5rem;right: 0.5rem;}
+			}
+			.buy{
+				position: absolute;
+				animation: buy 1s 1 normal ;
+				animation-fill-mode: forwards;
+			}
+			@keyframes fanha{
+				from{top: 3rem;}
+				to{top: -2rem;}
+			}
+			.fanha{
+				position: absolute;
+				left: 4.5rem;
+				animation: fanha 1s 1 normal ;
+				animation-fill-mode: forwards;
+			}
+			@keyframes fanzan{
+				to{top: -2rem;left: 4.5rem;}
+				from{top:0.5rem;left: 0.4rem;}
+			}
+			.fanzan{
+				position: absolute;
+				animation: fanzan 1s 1 normal ;
+				animation-fill-mode: forwards;
+			}
+			@keyframes fanmeng{
+				from{top:2.2rem;left: 2rem;}
+				to{top:-2rem;left: 4.5rem;}
+				
+			}
+			.fanmeng{
+				position: absolute;
+				animation: fanmeng 1s 1 normal ;
+				animation-fill-mode: forwards;
+			}
+			@keyframes fancao{
+				to{top: -2rem;right: 4.5rem;}
+				from{top:2.4rem;right: 2.3rem;}
+			}
+			.fancao{
+				position: absolute;
+				animation: fancao 1s 1 normal ;
+				animation-fill-mode: forwards;
+			}
+			@keyframes fanbuy{
+				from{top:0.5rem;right: 0.5rem;}
+				to{top: -2rem;right: 4.5rem;}
+				
+			}
+			.fanbuy{
+				position: absolute;
+				animation: fanbuy 1s 1 normal ;
+				animation-fill-mode: forwards;
+			}
+			@keyframes xuanz{
+				from{transform: rotate(0deg);}
+				to{transform: rotate(360deg);}
+			}
+			.xuanz {
+				animation: xuanz 1s 1 normal;
+			}
+		</style>
+		
+		<ion-modal-view style="background-color:rgba(51,51,51,0.5);">
+			<ion-header-bar>
+				
+				<div id="closeAnimate" class="title item-avatar" style="margin-top: -0.4rem;margin-left:4.1rem;" ng-click="closeAnimate()">
+					<img  src="img/logo.png"  id="target" />
+				</div>
+				
+			</ion-header-bar>
+			<ion-content  style="position: relative;" >
+				<img id="ani1" class="" src="img/zan.png" style="width: 1rem;height: auto;"/>
+				<img id="ani2" class="" src="img/meng.png" style="width: 1rem;height: auto;"/>
+				<img id="ani3" class="" src="img/ha.png" style="width: 1rem;height: auto;"/>
+				<img id="ani4" class="" src="img/cao.png" style="width: 1rem;height: auto;"/>
+				<img id="ani5" class="" src="img/buy.png" style="width: 1rem;height: auto;"/>
+				
+			</ion-content>
+		</ion-modal-view>
+		
+		
+	</script>
+	
+	<script id="search.html" type="text/ng-template">
+		
+		<ion-modal-view>
+			<div class="bar bar-header item-input-inset"  style="background: #C0C0C0;">
+			  <label class="item-input-wrapper light-bg" >
+			  	<!--//获取焦点的时候left变为0-->
+			    <i id="changeIco" class="icon ion-ios-search placeholder-icon" style="position: absolute;left: 3.5rem;"></i>
+			    <input type="search" placeholder="搜索" style="text-align: center;">
+			  </label>
+			  <button class="button button-clear button-calm" ng-click="closeSearch()">
+			   		 取消
+			  </button>
+			</div>
+			<div class="tabs-striped tabs-top">
+					<div class="tabs">
+					      <a class="tab-item active" href="#">全部</a>
+					      <a class="tab-item" href="#">产品</a>
+					      <a class="tab-item" href="#">人物</a>
+					       <a class="tab-item" href="#">列表</a>
+					       <a class="tab-item" href="#"> </a>
+					</div>
+				</div>
+			<ion-content>
+				
+				
+				
+				<div class="list" style="margin-top: 2.6rem;" ng-click="toChange()">
+				
+				  <div class="item item-button-right">
+				    最新
+				    <button class="button  button-clear button-dark">
+				      <i class="icon ion-ios-arrow-forward"></i>
+				    </button>
+				  </div>
+				</div>
+				<div class="padding">
+					<div class="row" style="margin-top: 1rem;">
+						
+							<button class="button  button-stable" style="border:1px solid #4D4D4D;width: 4.5rem;margin-right:1rem ;">清空</button>
+						
+						
+							<button class="button  button-assertive" style="width: 4.5rem;">搜索</button>
+						
+					</div>
+				</div>
+				
+			</ion-content>
+		</ion-modal-view>
+	</script>
+</ion-view>

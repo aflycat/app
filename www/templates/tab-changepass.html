@@ -1,0 +1,27 @@
+<ion-view ng-controller="ChangepassCtrl">
+	<ion-header-bar style="background:#f5f5f5;">
+		<button class="button button-clear button-dark icon ion-ios-arrow-back" ng-click="toInformation()"></button>
+		<h1 class="title">修改密码</h1>
+	</ion-header-bar>
+	<ion-content style="background:#f5f5f5;">
+		<ion-list >
+			<div class="item" style="margin-top: 1rem;">
+				<input type="password" placeholder="请输入原密码" />
+			</div>
+		</ion-list>
+		 
+		<ion-list>
+			<div class="item" style="margin-top: 0.5rem;">
+				<input type="password" placeholder="请输入新密码" />
+			</div>
+			
+			<div class="item" >
+				<input type="password" placeholder="再输入一遍" />
+			</div>
+		</ion-list>
+		<div class="padding " style="margin-top: 0.5rem;">
+			<button class="button button-block " style="background: #CCCCCC;">绑定</button>
+		</div>
+		
+	</ion-content>
+</ion-view>

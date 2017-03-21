@@ -1,0 +1,52 @@
+ <ion-view ng-controller="InformationCtrl" >
+	<ion-header-bar class="bar-light">
+		<button class="button button-clear icon ion-navicon-round" ng-click="toogleLeft()"></button>
+		<h1 class="title">个人中心</h1>
+	</ion-header-bar>
+	<ion-content style="background: #F5F5F5;">
+		<div class="list" style="margin-top: 1rem;">
+			<a class="item  item-avatar-right item-icon-right" href="#">
+				<img style="position: absolute;left: 8rem;" src="{{data.touxiang}}">
+				<i class="icon ion-ios-arrow-forward"></i>
+			    <h2>头像</h2>
+			</a>
+			
+				<a class="item item-icon-right" ng-click="toUsername()">
+				   <i class="icon ion-ios-arrow-forward"></i>
+				   		 昵称
+				    <span class="item-note">
+				     	{{data.name}}
+				    </span>
+				  </a>
+			
+		</div>
+		<div class="list" style="margin-top: 0.5rem;">
+			<a class="item item-icon-right" ng-click="toTelephone()" >
+				   <i class="icon ion-ios-arrow-forward"></i>
+				   		 手机
+				    <span class="item-note">
+				     	{{data.username}}
+				    </span>
+			</a>
+			<a class="item item-icon-right" ng-click="toEmail()">
+				   <i class="icon ion-ios-arrow-forward"></i>
+				   		注册绑定
+				    <span class="item-note">
+				     	未绑定
+				    </span>
+			</a>
+		</div>
+		<div class="list" style="margin-top: 0.5rem;">
+			<a class="item item-icon-right" ng-click="toChangepass()">
+				   <i class="icon ion-ios-arrow-forward"></i>
+				   		修改密码
+				    
+			</a>
+		</div>
+		<div class="list" style="margin-top: 0.5rem;text-align: center;">
+			<a class="item" ng-click="tuichu()">
+				   退出当前账号
+			</a>
+		</div>
+	</ion-content>
+</ion-view>

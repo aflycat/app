@@ -1,0 +1,15 @@
+<ion-view ng-controller="HomeCtrol">
+	<ion-header-bar class="bar-stable">
+		<button class="button button-clear button-dark icon ion-ios-arrow-back" ng-click="backSearch()"></button>
+		<h1 class="title">内容筛选</h1>
+	</ion-header-bar>
+	<ion-content class="stable-bg">
+		<ion-list >
+			
+		  <ion-radio ng-model="choice" ng-value="'最新'">最新</ion-radio>
+		  <ion-radio ng-model="choice" ng-value="'最热'">最热</ion-radio>
+		  <ion-radio ng-model="choice" ng-value="'热议'">热议</ion-radio>
+		  <ion-radio ng-model="choice" ng-value="'随机'">随机</ion-radio>
+		</ion-list>
+	</ion-content>
+</ion-view>

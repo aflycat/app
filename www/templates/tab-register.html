@@ -1,0 +1,24 @@
+<ion-view ng-controller="RegisterCtrl">
+	<ion-header-bar class="bar-light">
+		<a class="button button-icon ion-ios-arrow-back" ng-click="backLogin()"></a>
+		<h1 class="title">注册</h1>
+	</ion-header-bar>
+	<ion-content style="background: #efeff4;">
+		<div style="height: 0.3rem;"></div>
+		<p class="padding-top padding-left"> 通过您的手机号码注册设计癖账号</p>
+		<div class="list" style="background: #efeff4;">
+			<label class="item item-input">
+		    
+		   	 <input type="text" placeholder="输入手机号" ng-model="ctrlScope.num">
+		  	</label>
+		  <label class="item item-input item-button-right" style="margin-top: 0.5rem;">
+		    <input type="text" placeholder="请输入验证码,暂未开通,输入1234 " ng-model="ctrlScope.code">
+		    <button class="button button-clear button-calm" style="text-decoration: underline;font-size:0.4rem;">获取验证码</button>
+		  </label>
+		</div>
+		<div class="padding">
+			<button class="button button-block  " class="redbutton" style="text-decoration: underline;background:#C0C0C0;margin-top:1.5rem;color: #FFFFFF;" ng-click="toRegister()">提交注册</button>
+		</div>
+		
+	</ion-content>
+</ion-view>
